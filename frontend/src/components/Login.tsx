@@ -3,8 +3,8 @@ import axios from 'axios';
 
 import { Formik, Field, Form, FormikActions } from 'formik';
 import { TextField } from 'formik-material-ui';
-
 import { InputLabel, Button } from '@material-ui/core';
+
 
 interface LoginInfo {
   identifier: string;
@@ -14,7 +14,7 @@ interface LoginInfo {
 const Login: React.SFC<{}> = () => {
   return (
     <div className="loginForm">
-      <h1>Login</h1>
+      
       <Formik
         initialValues={{
           identifier: '',
@@ -39,24 +39,32 @@ const Login: React.SFC<{}> = () => {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              maxWidth: '400px',
+              maxWidth: 400,
               margin: '0 auto',
             }}
-          >
-            <InputLabel htmlFor="identifier">Username</InputLabel>
+          > 
+            <h1
+            style={{
+            margin:'0 auto'
+            }}
+            >Login</h1>
+            <InputLabel htmlFor="identifier"><strong>Username</strong></InputLabel>
             <Field
+              style={{
+              marginBottom:20
+              }}
               id="identifier"
               name="identifier"
-              placeholder="username/email"
+              placeholder="example@website.com"
               type="text"
               component={TextField}
               required
             />
-            <InputLabel htmlFor="password">Password</InputLabel>
+            <InputLabel htmlFor="password"><strong>Password</strong></InputLabel>
             <Field
               id="password"
               name="password"
-              placeholder="username/email"
+              placeholder="password"
               type="password"
               component={TextField}
               required
@@ -64,7 +72,10 @@ const Login: React.SFC<{}> = () => {
             <Button
               type="submit"
               disabled={isSubmitting || !isValid}
-              style={{ display: 'block' }}
+              style={{
+              display: 'block', 
+              marginTop:20
+              }}
             >
               Login
             </Button>
