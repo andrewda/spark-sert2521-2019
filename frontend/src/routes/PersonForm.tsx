@@ -27,7 +27,13 @@ const PersonForm: React.SFC<{}> = () => {
 
   return (
     <div className="container">
-      <h1>Person Details</h1>
+      <h1
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        Person Details
+      </h1>
       <Formik
         initialValues={{
           name: '',
@@ -56,7 +62,9 @@ const PersonForm: React.SFC<{}> = () => {
               margin: '0 auto',
             }}
           >
-            <InputLabel htmlFor="name">Name</InputLabel>
+            <InputLabel htmlFor="name">
+              <strong>Name</strong>
+            </InputLabel>
             <Field
               id="name"
               name="name"
@@ -66,18 +74,32 @@ const PersonForm: React.SFC<{}> = () => {
               required
             />
 
-            <InputLabel htmlFor="bio">Bio</InputLabel>
+            <InputLabel
+              htmlFor="bio"
+              style={{
+                marginTop: 20,
+              }}
+            >
+              <strong>Bio</strong>
+            </InputLabel>
             <Field
               id="bio"
               name="bio"
-              placeholder="Doe"
+              placeholder="Plays Dodgeball"
               type="text"
               component={TextField}
               multiline
               required
             />
 
-            <InputLabel htmlFor="slug">Nickname</InputLabel>
+            <InputLabel
+              htmlFor="slug"
+              style={{
+                marginTop: 20,
+              }}
+            >
+              <strong>Nickname</strong>
+            </InputLabel>
             <Field
               id="slug"
               name="slug"
@@ -87,7 +109,15 @@ const PersonForm: React.SFC<{}> = () => {
               required
             />
 
-            <InputLabel htmlFor="requests">Requests</InputLabel>
+            <InputLabel
+              htmlFor="requests"
+              style={{
+                marginTop: 20,
+                marginBottom: 5,
+              }}
+            >
+              <strong>Requests</strong>
+            </InputLabel>
             <Field
               id="requests"
               name="requests"
@@ -103,7 +133,10 @@ const PersonForm: React.SFC<{}> = () => {
             <Button
               type="submit"
               disabled={isSubmitting || !isValid}
-              style={{ display: 'block' }}
+              style={{
+                marginTop: 20,
+                display: 'inline-block',
+              }}
             >
               Submit
             </Button>
